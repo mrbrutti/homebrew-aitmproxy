@@ -7,7 +7,7 @@ class Aitm < Formula
   # Private repo: the asset needs an authenticated download (HOMEBREW_GITHUB_API_TOKEN).
   url "https://github.com/mrbrutti/homebrew-aitmproxy/releases/download/v0.1.0/aitm-0.1.0-aarch64-apple-darwin.tar.gz",
       using: GitHubPrivateRepositoryReleaseDownloadStrategy
-  sha256 "469dfcc9a57ccca5787193df71b26b5781622eae80102363119a9ce385e679f0"
+  sha256 "08209c9937b6e6f76597c272748942dd6b91a752ad4e1adcfe4029d8f108d5d9"
   license any_of: ["MIT", "Apache-2.0"]
 
   # Prebuilt Apple Silicon binary bundle: `aitm` plus the `obscura` browser
