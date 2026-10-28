@@ -1,8 +1,12 @@
+require_relative "../lib/private_strategy"
+
 class Aitm < Formula
   desc "Intercepting proxy for authorized security testing (proxy, CLI, web, TUI)"
   homepage "https://github.com/mrbrutti/aitmproxy"
   version "0.1.0"
-  url "https://github.com/mrbrutti/homebrew-aitmproxy/releases/download/v0.1.0/aitm-0.1.0-aarch64-apple-darwin.tar.gz"
+  # Private repo: the asset needs an authenticated download (HOMEBREW_GITHUB_API_TOKEN).
+  url "https://github.com/mrbrutti/homebrew-aitmproxy/releases/download/v0.1.0/aitm-0.1.0-aarch64-apple-darwin.tar.gz",
+      using: GitHubPrivateRepositoryReleaseDownloadStrategy
   sha256 "469dfcc9a57ccca5787193df71b26b5781622eae80102363119a9ce385e679f0"
   license any_of: ["MIT", "Apache-2.0"]
 
@@ -19,6 +23,10 @@ class Aitm < Formula
 
   def caveats
     <<~EOS
+      This is a PRIVATE tap: before installing, export a GitHub token with
+      `repo` scope so Homebrew can fetch the release asset:
+        export HOMEBREW_GITHUB_API_TOKEN=ghp_xxxxxxxx
+
       Run the proxy:          aitm            (listens on 127.0.0.1:8080)
       Trust the MITM CA:      aitm ca install
       Web operator UI:        aitm web        (prints the URL + token)
