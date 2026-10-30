@@ -1,29 +1,19 @@
 # homebrew-aitmproxy
 
-Private Homebrew tap for [aitmproxy](https://github.com/mrbrutti/aitmproxy) — an
+Public Homebrew tap for [aitmproxy](https://github.com/mrbrutti/aitmproxy) — an
 intercepting proxy for **authorized** security testing — and its native macOS
-operator app. Apple Silicon, macOS 26+.
+operator app. Apple Silicon, macOS 26+. The binaries are hosted on this tap's
+own releases; the source repository stays private.
 
 ## Install
 
-This is a **private** tap, so Homebrew needs a GitHub token to read it and to
-download the release assets. Set one once (a classic PAT with `repo` scope, or a
-fine-grained token that can read this repo):
-
-```bash
-export HOMEBREW_GITHUB_API_TOKEN=ghp_xxx   # add to ~/.zshrc to persist
-```
-
-Then:
-
 ```bash
 brew tap mrbrutti/aitmproxy
-brew install mrbrutti/aitmproxy/aitm            # the aitm binary: proxy + CLI + web + tui
+brew install mrbrutti/aitmproxy/aitm              # the aitm binary: proxy + CLI + web + tui
 brew install --cask mrbrutti/aitmproxy/aitmproxy  # the native macOS app
 ```
 
-`brew` clones the tap over your `gh`/git credentials; the token above is what
-lets it fetch the release `.tar.gz` / `.dmg` from this private repo.
+No token needed — the tap and its release assets are public.
 
 ## What you get
 
