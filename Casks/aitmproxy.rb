@@ -1,11 +1,12 @@
 require_relative "../lib/private_strategy"
 
 cask "aitmproxy" do
-  version "0.1"
-  sha256 "007ae8de52622db9d6d047b851d895747be851b0a4a9b6cb05b89112445343b2"
+  version "0.5.0"
+  sha256 "de7312e477afbe6fe8e4ca9160ce16e65f41b76610a52a74349af36c9d87778f"
 
-  # Private repo: authenticated download (needs HOMEBREW_GITHUB_API_TOKEN).
-  url "https://github.com/mrbrutti/homebrew-aitmproxy/releases/download/v0.1.0/Aitmproxy-#{version}.dmg",
+  # The notarized DMG is a release asset of the main (currently private) repo:
+  # authenticated download (needs HOMEBREW_GITHUB_API_TOKEN).
+  url "https://github.com/mrbrutti/aitmproxy/releases/download/v#{version}/Aitmproxy-#{version}.dmg",
       using: GitHubPrivateRepositoryReleaseDownloadStrategy
   name "Aitmproxy"
   desc "Native macOS operator UI for aitmproxy"
