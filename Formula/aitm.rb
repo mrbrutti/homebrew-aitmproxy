@@ -1,11 +1,11 @@
 class Aitm < Formula
   desc "Intercepting proxy for authorized security testing (proxy, CLI, web, TUI)"
   homepage "https://github.com/mrbrutti/aitmproxy"
-  version "0.5.3"
+  version "0.5.4"
   # Public binaries are hosted on the tap repo's own release; the source repo
   # stays private, so this points at mrbrutti/homebrew-aitmproxy, not the source.
   url "https://github.com/mrbrutti/homebrew-aitmproxy/releases/download/v#{version}/aitm-#{version}-aarch64-apple-darwin.tar.gz"
-  sha256 "f7ae8c192e0f7d331b45a948a5840a05ec573730ec47f5d00dd0fc4940c5ca3b"
+  sha256 "40eab068ffb91c651fdb36431efadd33ee09adb1f129fe6026849b25e2ba9595"
   license any_of: ["MIT", "Apache-2.0"]
 
   # Prebuilt Apple Silicon binary bundle: `aitm`, the standalone `aitm-tui`
@@ -16,7 +16,9 @@ class Aitm < Formula
   depends_on :macos
 
   def install
-    libexec.install "aitm", "aitm-tui", "obscura"
+    # `share/aitm/scripts` is the bundled detection catalogue; `aitm` discovers it
+    # beside its own executable, so it lives in libexec with the binaries.
+    libexec.install "aitm", "aitm-tui", "obscura", "share"
     bin.install_symlink libexec/"aitm"
     bin.install_symlink libexec/"aitm-tui"
   end
