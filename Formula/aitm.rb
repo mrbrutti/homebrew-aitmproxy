@@ -1,11 +1,11 @@
 class Aitm < Formula
   desc "Intercepting proxy for authorized security testing (proxy, CLI, web, TUI)"
   homepage "https://github.com/mrbrutti/aitmproxy"
-  version "0.5.2"
+  version "0.5.3"
   # Public binaries are hosted on the tap repo's own release; the source repo
   # stays private, so this points at mrbrutti/homebrew-aitmproxy, not the source.
   url "https://github.com/mrbrutti/homebrew-aitmproxy/releases/download/v#{version}/aitm-#{version}-aarch64-apple-darwin.tar.gz"
-  sha256 "272e9a9b6f5216ed806950cee446f6b8b86a1e607171b56a99d713048bbab0d0"
+  sha256 "f7ae8c192e0f7d331b45a948a5840a05ec573730ec47f5d00dd0fc4940c5ca3b"
   license any_of: ["MIT", "Apache-2.0"]
 
   # Prebuilt Apple Silicon binary bundle: `aitm`, the standalone `aitm-tui`
