@@ -1,6 +1,6 @@
 cask "aitmproxy" do
-  version "0.5.8"
-  sha256 "719dae9375618309c19742c6dac115768e299343e7d134dfdcf89cec233cd662"
+  version "0.5.9"
+  sha256 "6a577ba7654580a60a40a7ec3e52210c5fa55e3c840131f1ec88a558b1525f79"
 
   # Public binary hosted on the tap repo's own release (the source repo stays private).
   url "https://github.com/mrbrutti/homebrew-aitmproxy/releases/download/v#{version}/Aitmproxy-#{version}.dmg"
